@@ -1,0 +1,89 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Doc Lab Tutorial</title>
+  </head>
+  <body>
+
+    <H2>Doc Lab Tutorial</h2>
+
+    <h3>Share Storage</h3>
+
+    <pre>
+      PATH: vol/bitbucket/${USER}
+    </pre>
+
+    <h3>Python environment</h3>
+    <p>Create python environment</p>
+    <pre>
+      python3 -m virtualenv $PATH
+      or python3 -m venv $PATH
+    </pre>
+
+    <p>Delete python environment</p>
+    <pre>
+      rm -rf $PATH
+      eg: rm -rf py310
+    </pre>
+
+    <p>Activate python environment</p>
+    <pre>
+      source $PATH/bin/activate
+    </pre>
+
+    <p>Deactivate python environment</p>
+    <pre>
+      deactivate
+    </pre>
+
+    <p>*Shortcut</p>
+    <p>
+      Create a symbolic link (i.e. shortcut) from your home directory 
+      to point to the activate script. The following creates a symbolic link 
+      named ml venv in your home directory. You only need to do this once.
+    </p>
+    <pre>
+      eg: ln -s /vol/lab/intro2ml/venv/bin/activate ~/ml_venv
+    </pre>
+
+    <p>
+      You can then activate this virtual environment using your shortcut any time you need it.
+    </p>
+    <pre>
+      eg: source ~/ml_venv
+    </pre>
+
+    <h3>Jupyter Notenook</h3>
+
+    Connect the Jupyter Notenook with the virtual environment on DoC server
+
+    <pre>
+    ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv"
+    </pre>
+    <pre>
+    PORT: Pick a random number between 10000 and 20000
+    $LabMachine PATH: eg /vol/linux/bin/sshtolab
+    </pre>
+
+<h3>Useful links:</h3>
+  
+    Introduction to Machine Learning course Python virtual environment:
+    <pre>
+    PATH: /vol/lab/intro2ml/venv/
+    Shortcut of the environment: ml_venv
+    Activate the environment: source ml_venv
+  </pre>
+
+
+
+  </body>
+
+
+<p>
+  Reference: Introduction to Machine Learning course material
+</p>
+
+</html>
