@@ -14,6 +14,24 @@
       PATH: vol/bitbucket/${USER}
     </pre>
 
+    <h3>Connect to a DoC server/machine</h3>
+    <b>Method 1</b>
+    <p>First, use ssh to connect to shell[1-5].doc.ic.ac.uk</p>
+    <pre>
+    eg: ssh USERNAME@shell1.doc.ac.ic.uk
+    </pre>
+    <p>Then, connect to a DoC server/machine</p>
+    <pre>
+    eg: ssh USERNAME@ray06.doc.ic.ac.uk
+    </pre>
+
+    <b>Method 2</b>
+    <pre>
+      ssh -t [USERNAME@]shell3.doc.ic.ac.uk /vol/linux/bin/sshtolab
+    </pre>
+
+    
+
     <h3>Python environment</h3>
     <p>Create python environment</p>
     <pre>
