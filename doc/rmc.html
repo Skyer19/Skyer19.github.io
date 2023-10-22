@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title>Remote Connection</title>
+  </head>
+  <body>
+
+    <h2>Remote Connection</h2>
+    <h3>Set the Github and Gitlab connection in the computer at the same time</h3>
+    <b>Suitbale for the Mac OS</b>
+    <h4>Step 1: Create the ssh key for different platform</h4>
+      <pre>
+      ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C "user email"
+      ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -C "user email"
+    </pre>
+
+    <h4>Step 2: Modify the config file</h4>
+    <pre>
+      The file path:: ~/.ssh
+    </pre>
+
+    <pre>
+      Host gitlab.doc.ic.ac.uk
+      HostName gitlab.doc.ic.ac.uk 
+      User User name or User email
+      IdentityFile ~/.ssh/id_rsa_gitlab
+      
+      Host github.com
+      HostName github.com
+      User User name or User email
+      IdentityFile ~/.ssh/id_rsa_github
+    </pre>
+
+    <h4>Step 3: Put the ssh public key to the Github/GitLab user setting</h4>
+    ignore....
+
+    <h4>Step 4: Test the connection</h4>
+    <pre>
+      ssh -T git@gitlab.doc.ic.ac.uk
+      ssh -T git@github.com
+    </pre>
+
+    <h3>Set the Github and Gitlab connection in the computer at the same time</h3>
+
+    
+
+
+  </body>
+
+
+
+
+</html>
