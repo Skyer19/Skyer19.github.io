@@ -85,11 +85,13 @@
     Connect the Jupyter Notenook with the virtual environment on DoC server
 
     <pre>
-    ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv"
+    // ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv"
+    ssh -t -L 10086:localhost:10086 USERNAME@shell3.doc.ic.ac.uk "/vol/linux/bin/sshtolab -g -w ~/ -p 10086" -e [PATH OF PYTHON ENVIRONMENT]
     </pre>
+    
     <pre>
     PORT: Pick a random number between 10000 and 20000
-    $LabMachine PATH: eg /vol/linux/bin/sshtolab
+    PATH OF PYTHON ENVIRONMENT: /vol/lab/intro2ml/venv/
     </pre>
 
 <h3>Useful links:</h3>
