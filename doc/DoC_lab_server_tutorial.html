@@ -2,62 +2,74 @@
 
 <html>
   <head>
-    <title>DoC Lab Machine/Server Tutorial</title>
+    <title>DoC Lab Server Tutorial</title>
+
+    <style>
+      .highlight {
+          background-color: yellow;
+      }
+  </style>
+
   </head>
   <body>
 
-    <H2>Department of Computing Lab Machine/Server Tutorial</h2>
+    <H2>Department of Computing Lab Server Tutorial</h2>
 
-    <h3>Hint: Workstation Name:</h3>
-    <p><a href="https://www.imperial.ac.uk/computing/csg/facilities/lab/workstations/">[Workstations]</a> </p>
+    <b>Workstation Name:</b> <a href="https://www.imperial.ac.uk/computing/csg/facilities/lab/workstations/">[Workstations]</a> </p>
 
-    <h3>Share Storage</h3>
+    <b class="highlight">Share Storage</b>:
 
     <pre>
       PATH: /vol/bitbucket/${USER}
     </pre>
 
-    <h3>Connect to a DoC server/machine</h3>
+    <b class="highlight">Connect to a DoC server</b>
+
     <p><b>Method 1</b></p>
-    <p>First, use ssh to connect to shell[1-5].doc.ic.ac.uk</p>
+    <ul>
+    <li>Use ssh to connect to shell[1-5].doc.ic.ac.uk</li>
     <pre>
-      eg: ssh USERNAME@shell[1-5].doc.ac.ic.uk
+      ssh USERNAME@shell[1-5].doc.ac.ic.uk
     </pre>
-    <p>Then, connect to a DoC server/machine</p>
+    <li>Connect to a DoC server</li>
     <pre>
-      eg: ssh USERNAME@ray06.doc.ic.ac.uk
+      ssh USERNAME@ray06.doc.ic.ac.uk
     </pre>
+    </ul>
 
     <p><b>Method 2</b></p>
+    Connect to a server randomly.
     <pre>
       ssh -t [USERNAME@]shell[1-5].doc.ic.ac.uk /vol/linux/bin/sshtolab
     </pre>
 
-    <h3>Python environment</h3>
-    <p>Create python environment</p>
+
+    <b class="highlight" >Python environment</b>
+
+    <p><b>Create python environment</b></p>
     <pre>
       python3 -m virtualenv $PATH
       or python3 -m venv $PATH
     </pre>
 
-    <p>Delete python environment</p>
+    <p><b>Delete python environment</b></p>
     <pre>
       rm -rf $PATH
       eg: rm -rf py310
     </pre>
 
-    <p>Activate python environment</p>
+    <p><b>Activate python environment</b></p>
     <pre>
       source $PATH/bin/activate
     </pre>
 
-    <p>Deactivate python environment</p>
+    <p><b>Deactivate python environment</b></p>
     <pre>
       deactivate
     </pre>
 
-    <h4>Shortcut</h4>
-    <p>Create Shortcut</p>
+    <b class="highlight" >Shortcut</b>
+    <p><b>Create Shortcut</b></p>
     <p>
       Create a symbolic link (i.e. shortcut) from your home directory 
       to point to the activate script. The following creates a symbolic link 
@@ -74,18 +86,18 @@
       eg: source ~/ml_venv
     </pre>
 
-    <p>Remove Shortcut</p>
+    <p><b>Remove Shortcut</b></p>
       <pre>
       eg: rm -i ml_venv
     </pre>
 
 
-    <h3>Jupyter Notenook</h3>
+    <p><b class="highlight" >Jupyter Notenook</b></p>
 
     Connect the Jupyter Notenook with the virtual environment on DoC server
 
     <pre>
-    // ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv"
+    // ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv/.../venv/"
     ssh -t -L 10086:localhost:10086 USERNAME@shell3.doc.ic.ac.uk "/vol/linux/bin/sshtolab -g -w ~/ -p 10086" -e [PATH OF PYTHON ENVIRONMENT]
     </pre>
     
@@ -96,27 +108,21 @@
 
 <h3>Useful links:</h3>
   
-    <b>Introduction to Machine Learning course Python virtual environment:</b>
+    <p>1.Introduction to Machine Learning course Python virtual environment:</p>
     <pre>
     PATH: /vol/lab/intro2ml/venv/
     Shortcut of the environment: ~/ml_venv
     Activate the environment: source ~/ml_venv
     </pre>
 
-    <b>Python 3.10.12 virtual environment:</b>
+    <p>2.Python 3.10.12 virtual environment:</p>
     <pre>
     PATH: /vol/bitbucket/$USER/py_env/py310/
     Shortcut of the environment: ~/py310
+    Activate the environment: source ~/py310
     </pre>
-
-
 
   </body>
 
-
-<p>
-  References: <br>
-  1. Introduction to Machine Learning course material
-</p>
 
 </html>

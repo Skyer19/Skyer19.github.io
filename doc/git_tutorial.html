@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title>Git Tutorial</title>
+    <style>
+      .highlight {
+          background-color: yellow;
+      }
+  </style>
+
+  </head>
+  <body>
+
+    <h3>Git Tutorial</h3>
+
+    <b class="highlight">Setting Git username for a single repository</b>
+    <ul>
+      <li>Open Terminal.</li>
+      <li>Change the current working directory to the local repository where you want to configure the name that is associated with your Git commits.</li>
+      <li>Set a Git username:
+        <pre>
+          git config user.name "Mona Lisa"
+        </pre>
+      </li>
+      <li>
+        Confirm that you have set the Git username correctly:
+        <pre>
+          git config user.name
+        </pre>
+      </li>
+    </ul>
+
+
+    <b class="highlight">Set the Github and Gitlab connection in a computer at the same time</b>
+    (Suitbale for the Mac OS)
+
+    <ul>
+      <li>Create the ssh key for different platform</li>
+      <pre>
+      ssh-keygen -t rsa -f ~/.ssh/id_rsa_gitlab -C "user email"
+      ssh-keygen -t rsa -f ~/.ssh/id_rsa_github -C "user email"
+    </pre>
+
+    <li>Modify the config file</li>
+    <pre>
+      The file path:: ~/.ssh
+    </pre>
+
+    <pre>
+      Host gitlab.doc.ic.ac.uk
+      HostName gitlab.doc.ic.ac.uk 
+      User User name or User email
+      IdentityFile ~/.ssh/id_rsa_gitlab
+      
+      Host github.com
+      HostName github.com
+      User User name or User email
+      IdentityFile ~/.ssh/id_rsa_github
+    </pre>
+
+    <li>Put the ssh public key to the Github/GitLab user setting</li>
+    ignore....
+
+    <li>Test the connection</li>
+    <pre>
+      ssh -T git@gitlab.doc.ic.ac.uk
+      ssh -T git@github.com
+    </pre>
+
+  </ul>
+
+
+
+  </body>
+
+
+
+
+</html>
