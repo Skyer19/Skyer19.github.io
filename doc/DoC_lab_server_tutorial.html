@@ -106,6 +106,26 @@
     PATH OF PYTHON ENVIRONMENT: /vol/lab/intro2ml/venv/
     </pre>
 
+
+    <p><b class="highlight" >Slurm</b></p>
+
+    <p><b>Use Jupyter notebook with the GPU resourse in Slurm</b></p>
+
+    1) Terminal 1:
+    ssh mr423@gpucluster2.doc.ic.ac.uk
+    salloc --gres=gpu:1
+
+    2) Terminal 2:
+    ssh -t -L 10001:localhost:10001 mr423@ray16.doc.ic.ac.uk /vol/linux/bin/slurm_sshtojob.sh -g -w ./ -p 10001 -e /vol/bitbucket/mr423/dlenv
+
+    <p><b>Submit job using Slurm</b></p>
+    ssh mr423@gpucluster2.doc.ic.ac.uk
+
+
+
+    
+
+
 <h3>Useful links:</h3>
   
     <p>1.Introduction to Machine Learning course Python virtual environment:</p>
