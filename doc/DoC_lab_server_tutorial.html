@@ -99,6 +99,8 @@
     <pre>
     // ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv/.../venv/"
     ssh -t -L 10086:localhost:10086 USERNAME@shell3.doc.ic.ac.uk "/vol/linux/bin/sshtolab -g -w ~/ -p 10086" -e [PATH OF PYTHON ENVIRONMENT]
+
+    ssh -t -L 10086:localhost:10086 mr423@shell3.doc.ic.ac.uk "/vol/linux/bin/sshtolab -g -w ~/ -p 10086" -e /vol/bitbucket/mr423/dlenv
     </pre>
     
     <pre>
@@ -112,15 +114,20 @@
     <p><b>Use Jupyter notebook with the GPU resourse in Slurm</b></p>
 
     1) Terminal 1:
+    <pre>
     ssh mr423@gpucluster2.doc.ic.ac.uk
     salloc --gres=gpu:1
+    </pre>
 
     2) Terminal 2:
+    <pre>
     ssh -t -L 10001:localhost:10001 mr423@ray16.doc.ic.ac.uk /vol/linux/bin/slurm_sshtojob.sh -g -w ./ -p 10001 -e /vol/bitbucket/mr423/dlenv
+    </pre>
 
     <p><b>Submit job using Slurm</b></p>
+    <pre>
     ssh mr423@gpucluster2.doc.ic.ac.uk
-
+   </pre>
 
 
     
