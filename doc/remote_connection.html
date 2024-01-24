@@ -19,7 +19,22 @@
       scp [path of file in my computer] [new path in the server]
 
       eg: scp [path of file in my computer] $USER@shell3.doc.ic.ac.uk:/homes/$USER/  // upload to the home path
-    </pre> 
+    </pre> s
+
+
+
+      <b class="highlight">下载压缩包和解压压缩包</b>
+      下载压缩包
+      <pre>
+        wget http://example.com/file
+        wget -P path_of_directory http://example.com/file
+      </pre> 
+
+      解压压缩包
+      <pre>
+        unzip file.zip
+        unzip zip_file_path -d path_of_want_to_zip_directory
+      </pre> 
 
 
 
