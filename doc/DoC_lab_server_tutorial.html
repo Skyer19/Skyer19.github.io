@@ -96,6 +96,8 @@
 
     Connect the Jupyter Notenook with the virtual environment on DoC server
 
+    Method 1
+
     <pre>
     // ssh -t -L PORT:localhost:PORT USERNAME@shell[1-5].doc.ic.ac.uk "$LabMachine PATH -g -w ~/ -p PORT -e /vol/bitbucket/username/venv/.../venv/"
     ssh -t -L 10086:localhost:10086 USERNAME@shell3.doc.ic.ac.uk "/vol/linux/bin/sshtolab -g -w ~/ -p 10086" -e [PATH OF PYTHON ENVIRONMENT]
@@ -106,6 +108,24 @@
     <pre>
     PORT: Pick a random number between 10000 and 20000
     PATH OF PYTHON ENVIRONMENT: /vol/lab/intro2ml/venv/
+    </pre>
+
+    Method 2
+
+    1) ssh connection
+    <pre>
+    ssh -L 8888:localhost:8888 -A -J mr423@shell3.doc.ic.ac.uk mr423@ray06.doc.ic.ac.uk
+    </pre>
+    2) Check if GPU or machine is busy with nvidia-smi and top htop
+    <pre>
+    nvidia-smi
+    top htop
+    </pre>
+    3) create and activate your own virtual environment as applicable
+    4) open jupyter notebook
+    <pre>
+    pip install jupyter
+    jupyter notebook --no-browser
     </pre>
 
 
