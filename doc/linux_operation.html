@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Remote Connection</title>
+    <title>Linux Operation</title>
 
   <style>
       .highlight {
@@ -12,14 +12,14 @@
   </head>
   <body>
 
-    <H2>Remote Connection</h2>
+    <H2>Linux Operation</h2>
 
     <b class="highlight">Upload file via ssh</b>
     <pre>
       scp [path of file in my computer] [new path in the server]
 
       eg: scp [path of file in my computer] $USER@shell3.doc.ic.ac.uk:/homes/$USER/  // upload to the home path
-    </pre> s
+    </pre>
 
 
 
@@ -35,6 +35,14 @@
         unzip file.zip
         unzip zip_file_path -d path_of_want_to_zip_directory
       </pre> 
+
+      <b class="highlight">实现打开终端时自动激活特定的 Python 环境</b>
+      如果使用的是 Bash, 通常是修改 ~/.bashrc 文件
+      <pre>
+        source /path/to/your/env/bin/activate
+
+        source ~/.bashrc
+      </pre>
 
 
 
